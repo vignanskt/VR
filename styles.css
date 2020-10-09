@@ -1,0 +1,263 @@
+/* ---------------------------Fonts-------------------------------------*/
+@font-face {
+    font-family: "Gabriela";
+    src: url('./fonts/Gabriela/Gabriela-Regular.ttf');
+}
+
+/* ---------------------------Layout-------------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 200px;  
+    grid-template-areas: 
+        "head"
+        "main"
+        "foot";
+    padding: 0;
+    margin: 0;
+    font-family: Gabriela;
+    font-size: clamp(1rem, 2vw, larger); 
+    
+}
+h1{
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem); 
+}
+h2, h3{
+    font-size: clamp(18px, 2vw, 1.5rem); 
+}
+
+header{
+    grid-area: head;
+    background-color: rgb(22, 22, 22);
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    opacity: 0.9;
+    margin-top: 0px;
+    z-index: 999;
+}
+
+main{
+    grid-area: main;
+    background-color: #add9eb;/* couleur page base*/
+}
+
+.alt-color{
+    background-color: rgb(215, 216, 174); /* class couleur alternative */
+}
+
+footer{
+    grid-area: foot;
+    background-color: rgb(0, 0, 0);
+
+}
+
+.nav-list{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    justify-content: center; /* horizontal*/
+    align-items: center; /* vertical*/
+    height: 100%;
+    overflow-x: scroll; /* 1 */
+    -webkit-overflow-scrolling: touch; /* 2 */
+    overflow: hidden;
+}
+
+.nav-item{
+    margin: 0 10px;
+} 
+.deco{
+    text-decoration: none;
+    color: rgb(221, 221, 221);
+}
+
+
+.bouton {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #add9eb;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgb(215, 216, 174);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+
+
+.nohyper{
+    text-decoration: none;
+}
+
+/* ----------------------------image principale------------------------------------*/
+#img-content{
+     /* left bot blur right*/
+    margin-top: -1px;
+    box-shadow: 0 4px 6px 0 rgb(78, 78, 78);
+    background-image: url(./media/vr_cut_satin.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* a tester sur petit ecran (mobile) rétrécir si apparition de partie non image*/
+    height: clamp(200px, 50vw, 500px ); /* entre 200px  et 500px avex taux de croissance 50vw depend taille ecran*/
+}
+
+
+
+
+
+/* ----------------------------------------------------------------*/
+.content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    padding: 1rem 0 2rem 0;
+}
+
+.title:before,.title:after{
+    content: "\00a0\00a0\00a0\00a0\00a0";/*space*/
+
+}
+.title{
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    display: flex;
+    text-align: center;
+   
+}
+
+.lay-text{
+    padding: 0 10%;
+    max-width: 800px;
+    text-align: justify;
+    margin-bottom: 2rem;
+    
+}
+
+/* ----------------------------img et texte------------------------------------*/
+.cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    align-content: center;
+    justify-content: center;  
+    
+}
+
+.artic{
+    margin-bottom: 40px;
+    text-align: center;
+    justify-content: center;  
+}
+
+.artic-img{
+    max-width: 200px;
+    max-height: 200px;/*for ios*/
+    height: auto;
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 3%;
+    border: 2px solid rgb(0, 0, 0);
+
+}
+
+.artic-txt{
+    max-width: 300px;
+    height: 100%;
+    flex: 1 1 300px;
+    margin: 0 1rem; 
+    text-align: justify;
+}
+
+
+.titre{
+    margin-top: -1rem;
+    color: rgb(8, 50, 139);
+    font-size: clamp(1.1rem, 2vw, 1.3rem); 
+}
+
+
+/* ---------------------------- contact----------------------------------*/
+ /* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #000; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: -1px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 0;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 10px;
+  background-color: rgb(215, 216, 174);
+  padding: 1em;
+  max-width: 85%;
+} 
+
+.container > form{
+    max-width: 450px;
+}
+
+/*materiels*/
+
+.materiels{
+
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+ 
+}
+
+.mat{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom:1em ;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.description{
+    max-width: 400px;
+    margin-right: 1em;
+}
